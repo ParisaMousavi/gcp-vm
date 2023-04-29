@@ -13,8 +13,8 @@ variable "zone" {
 }
 
 variable "additional_tags" {
-  default = {}
-  type    = map(string)
+  default = []
+  type    = list(string)
 }
 
 variable "initialize_params" {

@@ -7,12 +7,7 @@ resource "google_compute_instance" "this" {
   name         = var.name
   machine_type = var.machine_type
   zone         = var.zone
-  tags = merge(
-    var.additional_tags,
-    {
-      created-by = "iac-tf"
-    },
-  )
+  tags         = concat(["iac-tf"], var.additional_tags)
   boot_disk {
     initialize_params {
       image  = var.initialize_params.image
